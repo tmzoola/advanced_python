@@ -4,6 +4,9 @@ people learn at school.” – excerpt from the decimal arithmetic specification
 
 for i in text:
     print(i)
+    
+for i in text:
+    print(i)
 
 
 
