@@ -11,12 +11,11 @@ try:
     connection.autocommit = True
 
     cursor = connection.cursor()
-    cursor.execute(""" select * from category""")
+    cursor.execute(""" select * from market where id between 390 and 400 order by date desc""")
     with open('file.text','w') as file:
         for i in cursor.fetchall():
             file.writelines(str(i)+"\n")
         
         
-    
 except Exception as ex:
     print("Salom",ex)
