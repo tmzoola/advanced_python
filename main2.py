@@ -11,8 +11,8 @@ try:
     connection.autocommit = True
 
     cursor = connection.cursor()
-    cursor.execute(""" select * from market where id between 390 and 400 order by date desc""")
-    with open('file.text','w') as file:
+    cursor.execute(""" select * from market where first_name like 'B%' and date between '2017-01-01' and '2020-12-31'""")
+    with open('file.csv','w') as file:
         for i in cursor.fetchall():
             file.writelines(str(i)+"\n")
         
