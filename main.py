@@ -1,11 +1,11 @@
-def counter(start):
-    def increment(step=1):
-        nonlocal start
-        start = start +step
-        print(start)
-    return increment
+text  = "Banana"
 
-my_func = counter(5)
+my_char = iter(text)
 
-my_func()
-my_func()
+print(next(my_char))
+print(next(my_char))
+print(next(my_char))
+print(next(my_char))
+print(next(my_char))
+print(next(my_char))
+print(next(my_char))
