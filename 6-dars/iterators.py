@@ -7,8 +7,7 @@ while True:
         print(item)
     except StopIteration:
         break
-
-
+    
 class MyRange:
     def __init__(self, start, end) -> None:
         self.start = start
