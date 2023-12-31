@@ -1,5 +1,5 @@
 class Solution:
-  def kLengthApart(self, nums: List[int], k: int) -> bool:
+  def kLengthApart(self, nums: int, k: int) -> bool:
     if k == 0:
       return True
 
