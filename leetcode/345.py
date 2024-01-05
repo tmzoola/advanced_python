@@ -1,24 +1,20 @@
 class Solution:
     def reverseVowels(self, s: str) -> str:
-        vowels = ["a", "e", "i","o","u"]
-        dict_a = {key:value for key, value in enumerate(s) if value in vowels}
-        new_word = ""
-        count = 0
-        length = len(s)-1
+        vowels = ["a", "e", "i","o","u","A", "E", "I","O","U"]
+        vowels_list = [i for i in s if i in vowels]
         
-        while length>0:
-            if s[count] not in vowels:
-                new_word+=s[count]
-            elif s[count] in vowels:
-                print(count, length)
-               
-            length-=1
-            count+=1
-            
-        
-        return new_word, dict_a
-        
-        
+        print(vowels_list)
 
+        result = ""
+        
+        for letter in s:
+            if letter in vowels:
+                result = result + vowels_list.pop()
+            else:
+                result+=letter
+        
+        return result
+        
+    
 obj = Solution()
 print(obj.reverseVowels("hello"))
