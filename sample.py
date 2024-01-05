@@ -1,37 +1,18 @@
-import threading
-import time
-import concurrent.futures
-
-
-start = time.perf_counter()
-
-
-def index(secs):
-    print(f"Running in {secs} function.....")
-    time.sleep(secs)
-    print(f"Completed in {secs} function")
-
-
-with concurrent.futures.ThreadPoolExecutor() as executor:
-    seconds = [5,4,3,2,1]
+def insertion_sort(my_list):
+    indexing_length = range(1,len(my_list))
     
-    res = [executor.submit(index, secds) for secds in seconds]
-    for f in concurrent.futures.as_completed(res):
-        f.result()
+    for i in indexing_length:
+        value_to_sort = my_list[i]
+        
+        while my_list[i-1]>value_to_sort and i>0:
+            my_list[i],my_list[i-1]=my_list[i-1], my_list[i]
+            i-=1
     
-
-# threads = []
-
-# for _ in range(1000):
-#     t = threading.Thread(target=index, args=[1.5])
-#     t.start()
-#     threads.append(t)
-
-# for thead in threads:
-#     thead.join()
+    return my_list
+            
 
 
 
-finish = time.perf_counter()
-
-print(f"Finished in {round(finish-start,2)} seconds")
+print(insertion_sort([8,5,9,12,7,1,2]))
+        
+    
