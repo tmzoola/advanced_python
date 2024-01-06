@@ -2,6 +2,7 @@ class Solution:
     def reverseVowels(self, s: str) -> str:
         vowels = ["a", "e", "i","o","u","A", "E", "I","O","U"]
         vowels_list = [i for i in s if i in vowels]
+        print(vowels_list)
         
         print(vowels_list)
 
@@ -15,6 +16,5 @@ class Solution:
         
         return result
         
-    
 obj = Solution()
 print(obj.reverseVowels("hello"))
